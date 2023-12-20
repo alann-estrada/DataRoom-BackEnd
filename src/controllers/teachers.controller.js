@@ -110,5 +110,7 @@ async function logout(req = request, res = response) {
 
 
 module.exports = {
-    
+    createTeacher,
+    login,
+    logout
 }
