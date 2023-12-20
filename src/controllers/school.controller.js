@@ -170,6 +170,7 @@ async function updateSchool (req = request, res = response){
     }
 }
 
+
 module.exports = {
     createShcool,
     getSchoolById,
