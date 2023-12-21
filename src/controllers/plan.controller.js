@@ -78,12 +78,19 @@ async function createPlan (req = request, res = response){
 async function getPlans (req = request, res = response){
     try {
         const [plans] = await promisePool.query("SELECT * FROM plan");
+        if(!plans.length){
+            return res.status(400).json({
+                ok: false,
+                status: 400,
+                msg: "No hay planes"
+            })
+        }
         return res.status(200).json({
             ok:true,
             status:200,
             plans
         })
-    } catch (error) {
+   } catch (error) {
         return res.status(500).json({
             info: {
                 ok: false, 
