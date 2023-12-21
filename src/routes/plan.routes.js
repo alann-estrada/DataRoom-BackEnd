@@ -3,6 +3,10 @@ const routes = express.Router();
 
 const { isAuthenticated } = require("../middlewares/authentication.middleware.js");
 
-const {} = require('../controllers/plan.controller.js')
+const {
+    updatePlan
+} = require('../controllers/plan.controller.js')
+
+routes.put('/plan', updatePlan)
 
 module.exports = routes;
